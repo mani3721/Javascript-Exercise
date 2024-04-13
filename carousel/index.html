@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h2>Carousel</h2>
+
+    <div class="slide-container">
+        <div class="slide" data-slide="slide-img">
+            <img src="./img-1.jpg" alt="">
+        </div>
+        <div class="slide" data-slide="slide-img">
+            <img src="./img-2.jpg" alt="">
+        </div>
+        <div class="slide" data-slide="slide-img">
+            <img src="./img-1.jpg" alt="">
+        </div>
+
+        <div class="carousel-indicator">
+            <ul class="indicator-lists">
+                <li><a href="#" class="indicator-link active"></a></li>
+                <li><a href="#" class="indicator-link"></a></li>
+                <li><a href="#" class="indicator-link"></a></li>
+            </ul>
+        </div>
+
+        <button data-button="previous" class="btn previous">previous</button>
+        <button data-button="next" class="btn next">Next</button>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>

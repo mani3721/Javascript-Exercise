@@ -1,0 +1,201 @@
+/* .grid:not(:last-child) {
+    margin-bottom: 9.6rem;
+} */
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    border: 1px solid green;
+    
+}
+
+
+
+h1 {
+    font-size: 20px;
+}
+
+h1 span {
+   color: #BD53ED;
+   position: relative;
+}
+
+h1 span::before {
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 2px ;
+    right: -8px;
+    background-color: #BD53ED;
+
+}
+
+
+
+.moon {
+    width: 300px;
+    height: 150px;
+    background-color: green;
+    border-radius: 200px 200px 3px 3px;
+}
+
+.move {
+    position: relative;
+    width: 50px;
+    height: 2px;
+    background-color: blue;
+}
+
+.move::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: -5px;
+    border-radius: 50%;
+    background-color: green;
+    animation: move 3s linear infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(50px);
+    }
+    
+}
+
+.flip-card {
+    width: 100px;
+    height: 100px;
+    perspective: 500px;
+
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.front-card , .back-card {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.front-card {
+  background-color: #BD53ED;
+}
+
+.back-card {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: blueviolet;
+  transform: rotateY(180deg);
+}
+
+.flip-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+
+
+.cards {
+    position: relative;
+    width: 320px;
+    height: 350px;
+    background-color: #BD53ED;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px gray;
+}
+
+.cards::before,
+.cards::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+    transition: 0.5s ;
+    z-index: -1;
+}
+
+.cards:hover::before {
+    transform: rotate(-20deg);
+}
+
+.cards:hover::after {
+    transform: rotate(-10deg);
+}
+
+/* accordion style */
+
+.accordion {
+    border: 1px solid #ccc;
+    overflow: hidden;
+  }
+  
+  .accordion-item {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .accordion-header {
+    background-color: #f4f4f4;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .accordion-content {
+   display: none;
+  }
+
+  .accordion-content.active {
+    display: block;
+  }
+  
+
+
+  /* box-shadow */
+
+  .box-shadow {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    background-color: #BD53ED;
+  animation: ripple 1s linear infinite;
+  }
+
+
+
+  @keyframes ripple {
+    0% {
+        box-shadow:  0 0 0 0px rgb(255, 0, 191),
+        0 0 0 10px rgb(255, 0, 191),
+        0 0 0 20px rgb(255, 0, 200);
+    }
+
+    100% {
+        box-shadow: 0 0 0 10px rgb(184, 5, 5),
+        0 0 0 20px rgba(255, 6, 197, 0.856),
+        0 0 0 40px rgba(245, 5, 221, 0.986);
+    }
+  }
+
+
+  /* progress-bar */
+
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    height: 5px;
+    width: 0%;
+    background-color: #BD53ED;
+  }
+

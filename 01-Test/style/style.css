@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* FLIP CARD */
+
+.filp-container {
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+}
+
+.filp-card {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    position: relative;
+    transition: all 1s ease-in-out;
+}
+
+.front-card, .back-card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.front-card {
+    transform: rotateY(0deg);
+    background-color: #BD53ED;
+}
+
+.back-card {
+    background-color: #009bf2;
+    transform: rotateY(180deg);
+}
+
+.filp-container:hover .filp-card {
+    transform: rotateY(180deg);
+}
+
+
+/* preview mode */
+
+.section-img {
+  display: flex;
+  justify-content: center;
+}
+
+.section-figure {
+  width: 20%;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.img {
+  max-width: 100%;
+}
+
+.preview-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%)  scale(3) ;
+  animation: zoomIn .8s;
+  z-index: 10;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: translate(-50% , -50%) scale(0) ;
+  }
+  
+}
+
+.hidden {
+  display: none;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  z-index: 5;
+}
+
+
+
+/* hover image  */
+
+.card {
+  width: 380px;
+  position: relative;
+  overflow: hidden;
+}
+.image {
+  max-width: 100%;
+
+}
+.image-container {
+  transition: .5s;
+}
+.image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(12, 90, 219, 0.85);
+  opacity: 0;
+  /* z-index: 10; */
+}
+
+.card:hover .image-container::before {
+ opacity: 1;
+ transition:all .5s ;
+}
+
+.card:hover .image-container {
+  transform: scale(1.01);
+}
+
+.card-content {
+  position: absolute;
+  top: 70%;
+  left: 0;
+  right: 0;
+  padding: 20px 10px;
+  background-color: #fff;
+  transform: translateY(-50%);
+  transition: .5s;
+  opacity: 0;
+  z-index: 10;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.card:hover .card-content { 
+   top: 50%;
+   opacity: 1;
+
+}
+
+
+/* Infinity Scrolling */
+
+
+.tag-list li {
+  padding: 10px;
+  background-color: #BD53ED;
+  border-radius: 20px;
+  color: white;
+}
+
+.scroller {
+  max-width: 600px;
+  border: 2px solid green;
+  overflow: hidden;
+
+}
+
+
+.scroller_inner {
+  padding-block: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+
+.scroller[data-animated = "true"] {
+
+  overflow: hidden;
+  -webkit-mask: linear-gradient(90deg transparent , white 20% , white 80%);
+  /* mask: linear-gradient(90deg, transparent , white ); */
+}
+
+
+.scroller[data-animated = "true"] .scroller_inner {
+    width: fit-content;
+    flex-wrap: nowrap;
+    animation: scroll 40s var(--_animation-direction ,forwards) linear infinite;
+} 
+
+.scroller[data-direction="right"] {
+  --_animation-direction: reverse;
+}
+.scroller[data-direction="left"] {
+  --_animation-direction: forwards;
+}
+
+.scroller:hover .scroller_inner {
+  animation-play-state: paused;
+} 
+
+@keyframes scroll {
+   to {
+    transform: translate(calc(-50% - 5px));
+   }
+}
+
+/* accordion */
+.accordion {
+    max-width: 500px;
+    width: 100%;
+    padding: 10px;
+    background-color: mediumorchid;
+    margin: 10px auto;
+
+}
+
+.accordion .accordion-content {
+    margin-block: 10px;
+    background-color: violet;
+    overflow: hidden;
+}
+
+.accordion-content .accordion-header {
+    display: flex;
+    align-items: center;
+    padding-inline: 10px;
+    min-height: 50px;
+    justify-content: space-between;
+    background-color: hotpink;
+    cursor: pointer;
+
+}
+
+.accordion-content .accordion-description {
+    padding-inline: 10px;
+    height: 0;
+    background-color: cadetblue;
+    transition: all 0.3s linear;
+}
+
+.shadow-box {
+  width: 200px;
+  aspect-ratio: 1 / 1;
+  margin-left: 40px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  box-shadow: 80px 20px 0 50px rgba(0, 0, 0, 0.12);
+}
+

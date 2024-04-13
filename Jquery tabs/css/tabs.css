@@ -1,0 +1,19 @@
+
+
+.tabs-container {
+    max-width: 500px;
+}
+
+.tab-btn-list.active .tab-btn {  
+    background-color: black;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+

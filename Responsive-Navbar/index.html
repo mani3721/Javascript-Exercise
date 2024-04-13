@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="./style.css">
+
+    <title>Nav Bar</title>
+</head>
+
+<body>
+
+    <header class="page-header">
+        <div class="container header-container">
+            <div>
+                <a href="#">Logo</a>
+            </div>
+            <nav class="page-nav">
+                <ul class="nav-lists">
+                    <li class="nav-list">
+                        <a href="#" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-list">
+                        <a href="#" class="nav-link">Blog</a>
+                    </li>
+                    <li class="nav-list">
+                        <a href="#" class="nav-link">Feature</a>
+                        <ul class="dropdown-lists">
+                            <li class="dropdown-list">
+                                <a href="#" class="dropdown-link">Report</a>
+                            </li>
+                            <li class="dropdown-list">
+                                <a href="#" class="dropdown-link">Home</a>
+                            </li>
+                            <li class="dropdown-list">
+                                <a href="#" class="dropdown-link">Analayis</a>
+                            </li>
+                            <li class="dropdown-list">
+                                <a href="#" class="dropdown-link">Document</a>
+                                <ul class="dropdown-subitem">
+                                    <li><a href="#">Home</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-list">
+                        <a href="#" class="nav-link">Service</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="nav-toggle">
+                <i class="fa-solid fa-bars menu"></i>
+                <i class="fa-solid fa-xmark close"></i>
+            </div>
+        </div>
+
+    </header>
+    <script src="./script.js"></script>
+</body>
+
+</html>

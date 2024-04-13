@@ -1,0 +1,62 @@
+@property --progress {
+    syntax: "<length-percentage>";
+    inherits: false;
+    initial-value: 0%;
+}
+
+:root {
+    --font-base: 'Space Mono', monospace;
+    --color-dark: #1f1a38;
+    --color-dark-glare: #989ea9;
+    --color-success: #76f7bf;
+  }
+
+
+[role='progressbar'] {
+
+    --size: 132px;
+    --bar-width: 20px;
+
+    font-size: 24px;
+    width: var(--size);
+    aspect-ratio: 1 / 1;
+    background-image: conic-gradient(var(--color-dark) var(--progress, 0), var(--color-dark-glare) 0%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: --progress 0.5s linear;
+
+    &::after {
+        content: attr(aria-valuenow) '%';
+        background-color: white;
+        border-radius: inherit;
+        width: calc(100% - var(--bar-width));
+        aspect-ratio: 1 / 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    span {
+        display: none;
+    }
+}
+
+[role='progressbar'][aria-valuenow='100']::after {
+
+    animation: progressComplete 0s forwards;
+    animation-delay: 1s;
+
+}
+
+@keyframes progressComplete {
+    to {
+        content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODUiIGhlaWdodD0iODUiIHZpZXdCb3g9IjUgMzAgNzUgMTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0zNS40MjM3IDUzLjczMjdMNjcuOTc4NyAyMS4xNzc3TDcyLjk4OTUgMjYuMTg0MkwzNS40MTk1IDYzLjc1TDEyLjg4NiA0MS4yMTIyTDE3Ljg5MjUgMzYuMjAxNUwzNS40MjM3IDUzLjczMjdaIiBmaWxsPSIjMWYxYTM4Ii8+Cjwvc3ZnPgo=");
+        background-color: var(--color-success);
+    }
+}
+
+.progressbar:not([role='progressbar']) {
+
+}

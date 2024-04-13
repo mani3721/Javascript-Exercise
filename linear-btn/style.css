@@ -1,0 +1,26 @@
+         
+ul li { list-style: none; }
+a { text-decoration: none; }
+        
+    .btn-grad {
+             display: inline-block;
+             text-align: center;
+             margin: 10px;
+             padding: 15px 45px;
+             text-transform: uppercase;
+             color: white;            
+             box-shadow: 0 0 20px #eee;
+             border-radius: 10px;
+             background-size: 300% 100%;
+             transition: all 1s linear ;
+             background-image: linear-gradient(to right, #17ffc9, #cafd13  , #ed09c7 , #09d2ed , #09ed55);
+          }
+
+          .btn-grad:hover {
+            background-position: -50%; 
+            color: #fff;
+          }
+
+                   
+       
+          

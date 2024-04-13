@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1>Form Validation</h1>
+
+    <div class="container">
+        <form action="" class="form">
+            <div class="form-control">
+                <label for="">username</label>
+                <input type="text" placeholder="username" class="username form-inputs" aria-details="username">
+                <small class="error">Error Message</small>
+            </div>
+            <div class="form-control">
+                <label for="">Email</label>
+                <input type="email" placeholder="email" class="email form-inputs" aria-details="email">
+                <small class="error">Error Message</small>
+            </div>
+            <div class="form-control">
+                <label for="">Password</label>
+                <input type="password" placeholder="password" class="password form-inputs" aria-details="password">
+                <small class="error">Error Message</small>
+            </div>
+            <div class="form-control">
+                <label for="">conform password</label>
+                <input type="password" placeholder="password-check" class="cpassword form-inputs"
+                    aria-details="cpassword">
+                <small class="error">Error Message</small>
+            </div>
+
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

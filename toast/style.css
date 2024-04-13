@@ -1,0 +1,64 @@
+.btn-toast {
+    display: inline-block;
+    text-align: center;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 40px;
+    background-size: 200% ;
+    border-radius: 100vw;
+    color: white;
+    transition:  background-position 0.5s linear;
+    background-image: linear-gradient(to right, #000000 0%, #0f9b0f  51%, #000000  100%);
+}
+
+body{
+    overflow: hidden;
+}
+
+.toast {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(calc(100% + 30px));
+}
+
+.toast.active {
+    transform: translateX(0);
+}
+
+.toast .toast-content{
+    display: flex;
+    align-items: center;
+}
+
+.btn-toast:hover {
+    background-position: right;
+}
+
+.toast .progress {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background: #ddd;
+}
+
+.toast .progress:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: var(--progress );
+    background-color: #4070f4;
+    transition: all 0.5s linear;
+}
+
+

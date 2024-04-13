@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    
+}
+
+h1 {  font-size: 20px; }
+h2 {  font-size: 20px; }
+h3 {  font-size: 20px; }
+h4 {  font-size: 20px; }
+h5 {  font-size: 20px; }
+h6 {  font-size: 20px; }
+
+ul li { list-style: none; }
+a { text-decoration: none; }
+a:hover { cursor: pointer; }
+
+
+/******************************/
+    /* REUSABLE COMPONENTS */
+/******************************/
+
+.container {
+    max-width: 1170px;
+    margin-inline: auto;
+    padding-inline: 15px;
+}
+
+/* Header */
+
+.page-header {
+    height: 90px;
+    background-color: violet;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.nav-lists {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-list {
+    position: relative;
+}
+
+.nav-link {
+    color: white;
+}
+
+.nav-toggle {
+    position: relative;
+    width: 30px;
+    aspect-ratio: 1 / 1;
+}
+
+:where(.menu , .close) {
+    position: absolute;
+    inset: 0;
+    width: max-content;
+    height: max-content;
+    margin: auto;
+    
+    cursor: pointer;
+    color: white;
+    transition: opacity .1s, transform .4s;
+}
+
+.menu {
+    display: none;
+}
+
+.close {
+    opacity: 0;
+}
+
+.dropdown-lists , .dropdown-subitem  {
+    position: absolute;
+    top: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease-in-out;
+}
+
+.dropdown-link {
+    display: inline-block;
+    padding: 10px 20px;
+    color: brown;
+    font-size: 20px;
+}
+
+.nav-list:hover .dropdown-lists,
+.dropdown-list:hover > .dropdown-subitem
+{
+    max-height: 1000px;
+    transition: max-height .4s ease-in;
+}
+
+.dropdown-list {
+    position: relative;
+}
+
+.dropdown-subitem {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: gray;
+}
+
+
+
+
+
+@media screen and (max-width: 1120px) {
+    
+    .page-nav {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        background-color: gray;
+        height: 0;
+        overflow: auto;
+        /* pointer-events: none; */
+        opacity: 0;
+        transition: height .4s , opacity .3s  ;
+
+    }
+
+    .nav-lists {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .page-nav.active {
+        opacity: 1;
+        height: calc( 100vh - 50px);
+    }
+
+    .nav-toggle.show-icon .menu {
+        opacity: 0;
+        transform: rotate(90deg);
+    }
+
+    .nav-toggle.show-icon .close {
+        opacity: 1;
+        transform: rotate(90deg);
+    }
+    
+}

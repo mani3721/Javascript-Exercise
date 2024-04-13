@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor Example</title>
+    <style>
+        body {
+            cursor: none;
+            /* Hide default cursor */
+        }
+
+        /* CSS styles go here */
+        #cursor {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid #F2751A;
+            position: fixed;
+            transform: translate(-50%, -50%) scale(1);
+            pointer-events: none;
+            transition: width 0.3s, height 0.3s, border-color 0.3s, opacity 0.3s;
+            z-index: 21;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 0;
+            left: 0;
+            cursor: none;
+        }
+
+        #cursor.notvis {
+            visibility: hidden;
+        }
+
+
+
+        /* #cursor.view_details {
+            width: 80px;
+            height: 80px;
+            background: #E7F870;
+            backdrop-filter: blur(5px);
+            border-color: #E7F870;
+        }
+
+        #cursor.view_details:before {
+            content: attr(data-view-details);
+            font-size: 14px;
+            height: 50px;
+            width: 50px !important;
+            color: #1F2122;
+            display: flex;
+            align-items: center;
+        } */
+    </style>
+</head>
+
+<body>
+    <div id="cursor" class="notvis"></div>
+
+    <!-- Your content goes here -->
+    <div style="margin-top: 200px;">
+        <p>Hover over this text to activate the cursor.</p>
+    </div>
+
+    <script>
+        // JavaScript to handle cursor behavior
+        const cursor = document.getElementById('cursor');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = `${e.clientX}px`;
+            cursor.style.top = `${e.clientY}px`;
+        });
+
+        // Function to toggle cursor visibility
+        function toggleCursorVisibility() {
+            cursor.classList.toggle('notvis');
+        }
+
+        // Example: toggle cursor visibility on hover
+        const hoverElement = document.querySelector('p');
+        hoverElement.addEventListener('mouseenter', toggleCursorVisibility);
+        hoverElement.addEventListener('mouseleave', toggleCursorVisibility);
+    </script>
+</body>
+
+</html>

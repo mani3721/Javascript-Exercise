@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Heights Example</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 150px;
+            border: 2px solid black;
+            padding: 20px;
+            overflow: scroll;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="box">
+        <p>This is some content inside a div element. This content is larger than the visible area of the div, so it
+            requires scrolling.</p>
+        <p>This is another paragraph to make the content longer.</p>
+    </div>
+
+    <script>
+        const box = document.getElementById('box');
+
+        console.log('Offset Height:', box.offsetHeight);
+        console.log('Client Height:', box.clientHeight);
+        console.log('Scroll Height:', box.scrollHeight);
+        console.log('Scroll Height:', box.innerHeight);
+    </script>
+
+</body>
+
+</html>

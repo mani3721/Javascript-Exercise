@@ -1,0 +1,14 @@
+{
+    "name":"PWA DEMO",
+    "start_url":".",
+    "background_color":"#211e21",
+    "theme_color":"#eb34db",
+    "display":"standalone",
+    "icons": [
+        {
+            "src":"logo.jpg",
+            "sizes":"256x256",
+            "types":"jpg"
+        }
+    ]
+}
