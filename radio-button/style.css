@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-radio {
+    display: none;
+
+}
+
+label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    border: 2px solid green;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &::before {
+        content: '';
+        width: 10px;
+        aspect-ratio: 1 / 1;
+        border: 3px solid blue;
+        border-radius: 50%;
+    }
+
+    .btn-radio:checked + &::before {
+        width: 10px;
+        aspect-ratio: 1 / 1;
+        border: 3px solid white;
+        background-color: blueviolet;
+    }
+
+
+
+
+}
+
+.btn-radio:checked  + label { 
+    background-color: cadetblue;
+}

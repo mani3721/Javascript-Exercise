@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div draggable="true" id="source1" ondragstart="onStartDrag(event)" ondragend="onEndDrag(event)"
+        class="drag-drop source">
+        <h5 class="title">Element</h5>
+    </div>
+    <div draggable="true" id="source2" ondragstart="onStartDrag(event)" ondragend="onEndDrag(event)"
+        class="drag-drop source">
+        <h5 class="title">Element</h5>
+    </div>
+    <div draggable="true" id="source3" ondragstart="onStartDrag(event)" ondragend="onEndDrag(event)"
+        class="drag-drop source">
+        <h5 class="title">Element</h5>
+    </div>
+
+    <div class="destination" id="destination" ondrop="onDrop(event)" ondragover="onDragOver(event)"
+        ondragenter="onDragEnter(event)" ondragleave="onDragLeave(event)">
+        <h5 class="title">Element</h5>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

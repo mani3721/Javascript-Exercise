@@ -1,0 +1,46 @@
+:root {
+    --primary-bg-color: #0d0d16;
+    --secondary-bg-color: #2b002b;
+    --draggable-border-color: #ff00ff;
+    --dropzone-border-color: #00ff3c;
+    --text-color: #fff;
+    --hover-bg-color: #2b002b;
+    --dropzone-text-color: #28a745;
+  }
+
+  .drag-drop {
+      box-sizing: border-box;
+      padding: 1em;
+      margin-bottom: 1em;
+      text-align: center;
+      transition: all 0.3s ease;
+      user-select: none;
+  }
+  
+  .source {
+      width: 300px;
+      font-weight: bold;
+      line-height: 50px;
+      background-color: var(--primary-bg-color);
+      border: 3px dashed var(--draggable-border-color);
+      border-radius: 8px;
+      cursor: grab;
+  }
+
+  .title {
+      color: var(--text-color);
+  }
+
+  .destination {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 300px;
+      min-height: 400px;
+      color: var(--dropzone-text-color);
+      background-color: var(--primary-bg-color);
+      border: 3px dashed var(--dropzone-border-color);
+      border-radius: 8px;
+      align-items: center;
+  }
+  

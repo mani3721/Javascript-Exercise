@@ -7,7 +7,7 @@ cardContainer.addEventListener("mousemove",(e)=> {
     cards.forEach((card)=>{
         const rect = card.getBoundingClientRect()
 
-        x = e.clientX - rect.left 
+        x = e.clientX  - rect.left 
         y = e.clientY - rect.top
  
         card.style.setProperty("--mouse-x",  `${x}px`)

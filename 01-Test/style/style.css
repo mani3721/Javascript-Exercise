@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
 
@@ -219,7 +219,7 @@
 .accordion .accordion-content {
     margin-block: 10px;
     background-color: violet;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .accordion-content .accordion-header {
@@ -238,6 +238,7 @@
     height: 0;
     background-color: cadetblue;
     transition: all 0.3s linear;
+    overflow: hidden;
 }
 
 .shadow-box {
@@ -248,4 +249,9 @@
   border-radius: 10px;
   box-shadow: 80px 20px 0 50px rgba(0, 0, 0, 0.12);
 }
-
+.element {
+  box-sizing: border-box;
+  width: 100px; /* This width includes padding and border */
+  padding: 10px;
+  border: 5px solid black;
+}

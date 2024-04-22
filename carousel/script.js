@@ -33,7 +33,7 @@ button.forEach((btn)=>{
         if (currentSlide > maxSlide) {
             currentSlide = 0;
         }else if (currentSlide < 0) {
-            currentSlide = maxSlide;
+            currentSlide = maxSlide; 
         }
 
         updateSlider(currentSlide)

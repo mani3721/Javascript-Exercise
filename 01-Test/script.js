@@ -84,6 +84,13 @@ accordionContent.forEach((item, index)=>{
   let icon = item.querySelector('i')
 
   header.addEventListener("click",()=>{
+    accordionContent.forEach((otherItem)=>{
+      if (otherItem !== item) {
+        otherItem.classList.remove('open')
+        otherItem.querySelector('.accordion-description').style.height = '0px';
+        otherItem.querySelector('i').classList.remove('fa-arrow-up')
+      }
+    })
      item.classList.toggle("open")
      icon.classList.toggle('fa-arrow-up')
      if (item.classList.contains("open")) {

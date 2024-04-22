@@ -9,7 +9,6 @@ window.onscroll = function() {
     sections.forEach(sec => {
         let scrollDistance = window.scrollY;
         let secDistance = sec.offsetTop;
-        
         // console.log(scrollDistance, secDistance);
 
         if (scrollDistance >= secDistance - 150 ) {
@@ -26,12 +25,14 @@ window.onscroll = function() {
 }
 
 window.addEventListener("scroll",()=>{
+
     const scrollTop = window.scrollY ;
 
     const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     const progress =  ( scrollTop / height ) * 100;
     //   console.log(progress);
-    progressBar.style.width = progress+"%";
+    progressBar.style.width = progress + "%";
+    
 })
 
 

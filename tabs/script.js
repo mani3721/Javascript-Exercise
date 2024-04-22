@@ -6,8 +6,7 @@ function filterCard(e) {
 
 
     cards.forEach((card=>{
-
-
+        
         if (card.dataset.name === e.target.dataset.filter || e.target.dataset.filter ==="all") {
             card.style.display= "block"
         } else {

@@ -8,8 +8,7 @@ const taskList = document.querySelector('.task');
 const addTask =()=>{
     const value =  input.value.trim();
     if (!value =="") {
-      const task = `
-      <div>
+      const task = `<div>
       <h2>${value}</h2>
       <button class="btn-edit">Edit</button>
       <button class="btn-delete">Delete</button>
