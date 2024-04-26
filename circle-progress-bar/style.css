@@ -25,7 +25,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: --progress 0.5s linear;
+    transition: --progress 0.6s linear;
 
     &::after {
         content: attr(aria-valuenow) '%';
